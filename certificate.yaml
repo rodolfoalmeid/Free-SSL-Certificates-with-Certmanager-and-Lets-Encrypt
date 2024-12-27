@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: observability-certificate
+  namespace: suse-observability
+spec:
+  dnsNames:
+    - rralab-obs.do.support.rancher.space
+  secretName: observability-tls-secret
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
